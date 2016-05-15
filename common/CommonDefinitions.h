@@ -1,3 +1,6 @@
+#ifndef COMMON_COMMONDEFINITIONS_H_
+#define COMMON_COMMONDEFINITIONS_H_
+
 #include <stdint.h>
 
 typedef char                                    CHAR;
@@ -30,3 +33,5 @@ typedef DOUBLE*                                 PDOUBLE;
 typedef FLOAT*                                  PFLOAT;
 typedef BYTE*                                   PBYTE;
 typedef BOOL*                                   PBOOL;
+
+#endif // COMMON_COMMONDEFINITIONS_H_
