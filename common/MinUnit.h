@@ -2,6 +2,7 @@
 #define COMMON_MINUNIT_H
 
 #include "CommonDefinitions.h"
+#include "Debug.h"
 
 #define MU_ASSERT(message, test) do{if(!(test)) return message;} while (0)
 #define MU_RUN_TEST(test) do { PCHAR message = test(); tests_run++; \

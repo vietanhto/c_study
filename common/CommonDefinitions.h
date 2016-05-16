@@ -46,4 +46,13 @@ typedef void*                                   PVOID;
 #define COLOR_CYAN                              "\x1B[36m"
 #define COLOR_WHITE                             "\x1B[37m"
 
+#define STATUS                                  UINT32
+#define STATUS_SUCCESS                          0x00000000
+#define STATUS_BASE                             0x00000000
+#define STATUS_NULL_ARG                         STATUS_BASE + 0x00000001
+#define STATUS_INVALID_ARG                      STATUS_BASE + 0x00000002
+#define STATUS_INVALID_ARG_LEN                  STATUS_BASE + 0x00000003
+
+#define CHK(C ,E) do {if(!(C)) {retValue = E; goto CleanUp;}} while (0)
+
 #endif // COMMON_COMMONDEFINITIONS_H_
