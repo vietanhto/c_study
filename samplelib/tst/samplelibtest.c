@@ -9,7 +9,7 @@ static PCHAR test1() {
 }
 
 static PCHAR test2() {
-    MU_ASSERT("It should failed", 1==1);
+    MU_ASSERT("It should failed", 1!=1);
     return NULL;
 }
 

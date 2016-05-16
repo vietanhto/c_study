@@ -11,9 +11,9 @@
     printf("Running test %s\n", argv[0]); \
     PCHAR result = all_tests(); \
     if (result != 0) { \
-        printf("%s\n", result); \
+        printf(COLOR_RED "%s\n" COLOR_RESET, result); \
     } else { \
-        printf("ALL TESTS PASSED\n"); \
+        printf(COLOR_GREEN "ALL TESTS PASSED\n" COLOR_RESET); \
     } \
     printf("Tests run: %d\n", tests_run); \
     return result != 0;\
