@@ -2,6 +2,8 @@
 #define COMMON_COMMONDEFINITIONS_H_
 
 #include <stdint.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 typedef char                                    CHAR;
 typedef short                                   WCHAR;
@@ -17,7 +19,7 @@ typedef double                                  DOUBLE;
 typedef float                                   FLOAT;
 typedef UINT8                                   BYTE;
 typedef INT32                                   BOOL;
-
+typedef void                                    VOID;
 
 typedef CHAR*                                   PCHAR;
 typedef WCHAR*                                  PWCHAR;
@@ -33,5 +35,6 @@ typedef DOUBLE*                                 PDOUBLE;
 typedef FLOAT*                                  PFLOAT;
 typedef BYTE*                                   PBYTE;
 typedef BOOL*                                   PBOOL;
+typedef void*                                   PVOID;
 
 #endif // COMMON_COMMONDEFINITIONS_H_
