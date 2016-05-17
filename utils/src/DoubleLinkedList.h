@@ -27,8 +27,8 @@ STATUS DoubleLinkedList_free(PDoubleLinkedList);
 
 STATUS DoubleLinkedList_push(PDoubleLinkedList, PVOID);
 STATUS DoubleLinkedList_pop(PDoubleLinkedList, PVOID*);
-VOID DoubleLinkedList_unshift(PDoubleLinkedList);
-VOID DoubleLinkedList_shift(PDoubleLinkedList);
+STATUS DoubleLinkedList_unshift(PDoubleLinkedList, PVOID);
+STATUS DoubleLinkedList_shift(PDoubleLinkedList, PVOID*);
 STATUS DoubleLinkedList_remove(PDoubleLinkedList, PListNode, PVOID*);
 
 #endif // UTILS_DOUBLELINKEDLIST_H

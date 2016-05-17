@@ -44,16 +44,39 @@ STATUS DoubleLinkedList_pop(PDoubleLinkedList pList, PVOID *pOutValue) {
     CHK(pList->last != NULL, DOUBLELINKEDLIST_STATUS_EMPTY_LIST);
     PListNode pNode = pList->last;
     retValue = DoubleLinkedList_remove(pList, pNode, pOutValue);
+
 CleanUp:
     return retValue;
 }
 
-VOID DoubleLinkedList_unshift(PDoubleLinkedList pList) {
+STATUS DoubleLinkedList_unshift(PDoubleLinkedList pList, PVOID value) {
+    STATUS retValue = STATUS_SUCCESS;
+    CHK(pList != NULL, STATUS_NULL_ARG);
 
+    PListNode pNode = calloc(1, sizeof(ListNode));
+    pNode->value = value;
+    if (pList->first == NULL) {
+        pList->first = pList->last = pNode;
+    } else {
+        pList->first->prev = pNode;
+        pNode->next = pList->first;
+        pList->last = pNode;
+    }
+    pList->length++;
+
+CleanUp:
+    return retValue;
 }
 
-VOID DoubleLinkedList_shift(PDoubleLinkedList pList) {
+STATUS DoubleLinkedList_shift(PDoubleLinkedList pList, PVOID *pOutValue) {
+    STATUS retValue = STATUS_SUCCESS;
+    CHK(pList != NULL, STATUS_NULL_ARG);
+    CHK(pList->last != NULL, DOUBLELINKEDLIST_STATUS_EMPTY_LIST);
+    PListNode pNode = pList->first;
+    retValue = DoubleLinkedList_remove(pList, pNode, pOutValue);
 
+CleanUp:
+    return retValue;
 }
 
 STATUS DoubleLinkedList_remove(PDoubleLinkedList pList, PListNode pNode, PVOID *pOutValue) {
